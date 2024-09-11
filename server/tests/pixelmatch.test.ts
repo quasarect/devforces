@@ -12,9 +12,19 @@ const matcher = (image1: string, image2: string) => {
 };
 
 test("pixelmatch 0", () => {
-	expect(matcher("img2.png", "img1.png")).toBe("95.8");
+	expect(matcher("user_response_1_image_1.png", "generated_image_1.png")).toBe(
+		"95.8",
+	);
 });
 
 test("pixelmatch 1", () => {
-	expect(matcher("img2.png", "img1.png")).toBe("95.8");
+	expect(matcher("user_response_1_image_1.png", "generated_image_2.png")).toBe(
+		"95.8",
+	);
+});
+
+test("pixelmatch 1", () => {
+	expect(matcher("user_response_1_image_1.png", "generated_image_3.png")).toBe(
+		"95.8",
+	);
 });
