@@ -21,6 +21,7 @@ app.use("/pulumi", pulumiRouter);
 
 app.use((error: Error, req: Request, res: Response, next: NextFunction) => {
 	console.log("Error");
+	console.log(error);
 });
 
 export default app;

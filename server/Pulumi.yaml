@@ -3,7 +3,7 @@ runtime:
   name: nodejs
   options:
     packagemanager: npm
-description: A minimal TypeScript Pulumi program
+description: DevForces a platform for competitive learning
 config:
   pulumi:tags:
     value:
