@@ -85,8 +85,8 @@ Napi::Value CompareImages(const Napi::CallbackInfo &info)
 
     output = new uint8_t[widthImage1 * heightImage1 * 4];
 
-    double threshold = 0.5;
-    bool includeAA = true;
+    double threshold = 0.1;
+    bool includeAA = false;
 
     uint64_t numDiffPixels = mapbox::pixelmatch(img1, img2, widthImage1, heightImage1, output, threshold, includeAA);
 

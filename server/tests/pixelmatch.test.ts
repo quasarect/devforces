@@ -1,15 +1,20 @@
-import { expect, test } from 'vitest'
+import { expect, test } from "vitest";
 
-import { getPercentageMatch } from '../src/services/pixelmatch'
-import path from 'path'
-import fs from 'fs'
+import { getPercentageMatch } from "../src/services/pixelmatch";
+import path from "path";
+import fs from "fs";
 
-test('pixelmatch', () => {
-  const image1 = fs.readFileSync(path.resolve(__dirname, 'resources/images/img2.png'));
-  const image2 = path.resolve(__dirname, 'resources/images/img1.png');
+const matcher = (image1: string, image2: string) => {
+	return getPercentageMatch(
+		fs.readFileSync(path.resolve(__dirname, "resources/images/" + image1)),
+		path.resolve(__dirname, "resources/images/" + image2),
+	);
+};
 
-  const percentageMatch = getPercentageMatch(image1, image2);
+test("pixelmatch 0", () => {
+	expect(matcher("img2.png", "img1.png")).toBe("95.8");
+});
 
-  expect(percentageMatch).toBe("100.0");
-
-})
+test("pixelmatch 1", () => {
+	expect(matcher("img2.png", "img1.png")).toBe("95.8");
+});

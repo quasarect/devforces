@@ -344,7 +344,7 @@ endif
 
 quiet_cmd_regen_makefile = ACTION Regenerating $@
 cmd_regen_makefile = cd $(srcdir); /tmp/bunx-1000-node-gyp@latest/node_modules/node-gyp/gyp/gyp_main.py -fmake --ignore-environment "-Dlibrary=shared_library" "-Dvisibility=default" "-Dnode_root_dir=/home/pratz/.cache/node-gyp/22.7.0" "-Dnode_gyp_dir=/tmp/bunx-1000-node-gyp@latest/node_modules/node-gyp" "-Dnode_lib_file=/home/pratz/.cache/node-gyp/22.7.0/<(target_arch)/node.lib" "-Dmodule_root_dir=/home/pratz/Desktop/devforces/server" "-Dnode_engine=v8" "--depth=." "-Goutput_dir=." "--generator-output=build" -I/home/pratz/Desktop/devforces/server/build/config.gypi -I/tmp/bunx-1000-node-gyp@latest/node_modules/node-gyp/addon.gypi -I/home/pratz/.cache/node-gyp/22.7.0/include/node/common.gypi "--toplevel-dir=." binding.gyp
-Makefile: $(srcdir)/build/config.gypi $(srcdir)/node_modules/node-addon-api/node_api.gyp $(srcdir)/../../../../../tmp/bunx-1000-node-gyp@latest/node_modules/node-gyp/addon.gypi $(srcdir)/../../../.cache/node-gyp/22.7.0/include/node/common.gypi $(srcdir)/binding.gyp
+Makefile: $(srcdir)/../../../.cache/node-gyp/22.7.0/include/node/common.gypi $(srcdir)/node_modules/node-addon-api/node_api.gyp $(srcdir)/binding.gyp $(srcdir)/build/config.gypi $(srcdir)/../../../../../tmp/bunx-1000-node-gyp@latest/node_modules/node-gyp/addon.gypi
 	$(call do_cmd,regen_makefile)
 
 # "all" is a concatenation of the "all" targets from all the included
