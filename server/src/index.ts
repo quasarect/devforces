@@ -1,12 +1,17 @@
-import app from './app';
-import env from '../config/env';
-import '../config/db';
+import app from "./app";
+import env from "../config/env";
+import "../config/db";
 
 app.listen(env.PORT, () => {
-  console.log(`Server running at http://localhost:${env.PORT}`);
+	console.log(`Server running at http://localhost:${env.PORT}`);
 });
 
-process.on('uncaughtException', (error: Error) => {
-  console.log('Uncaught Exception: ', error);
-  // process.exit(1)
+process.on("uncaughtException", (error: Error) => {
+	console.log("Uncaught Exception: ", error);
+	// process.exit(1)
+});
+
+process.on("unhandledRejection", (error: Error) => {
+	console.log("Unhandled Rejection: ", error);
+	// process.exit(1)
 });
