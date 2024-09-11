@@ -4,8 +4,9 @@ import morgan from "morgan";
 import { config } from "dotenv";
 import pulumiRouter from "./routes/pulumi";
 
+import env from './config/env';
+
 const app = express();
-const port = process.env.PORT || 3000;
 
 config();
 
@@ -27,6 +28,6 @@ app.use((error: Error, req: Request, res: Response, next: NextFunction) => {
 	console.log("Error");
 });
 
-app.listen(port, () => {
-	console.log(`Server is running on http://localhost:${port}`);
+app.listen(env.PORT, () => {
+	console.log(`Server is running on http://localhost:${env.PORT}`);
 });
