@@ -1,6 +1,6 @@
 import { RequestHandler } from "express";
 import { sshInstance } from "../pulumi/templates/ssh";
-import resourceTags from "../../config/pulumi";
+import resourceTags from "../config/pulumi";
 import { getStack } from "../utils/pulumi";
 
 export const demoHandler: RequestHandler = async (req, res, next) => {

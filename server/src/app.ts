@@ -1,7 +1,10 @@
-import express, { NextFunction, Request, Response } from "express";
+import express from "express";
 import cors from "cors";
 import morgan from "morgan";
-import pulumiRouter from "./routes/pulumi";
+
+import router from "./routes/router";
+
+import { handleNotFound, handleGlobalError } from "./middlewares/error";
 
 const app = express();
 
@@ -9,19 +12,8 @@ app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
 
-app.use("/test", async (req, res) => {
-	try {
-		res.status(200).json({ message: "Recieved" });
-	} catch (e) {
-		res.status(200).json({ message: "Error" });
-	}
-});
+app.use("/api", router);
 
-app.use("/pulumi", pulumiRouter);
-
-app.use((error: Error, req: Request, res: Response, next: NextFunction) => {
-	console.log("Error");
-	console.log(error);
-});
+app.use(handleNotFound, handleGlobalError);
 
 export default app;

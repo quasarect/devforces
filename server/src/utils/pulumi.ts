@@ -1,5 +1,5 @@
 import * as pulumi from "@pulumi/pulumi";
-import env from "../../config/env";
+import env from "../config/env";
 import { PulumiFn } from "@pulumi/pulumi/automation";
 
 const projectName = env.PROJECT_NAME;

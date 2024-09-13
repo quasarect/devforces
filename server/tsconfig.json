@@ -1,5 +1,6 @@
 {
 	"compilerOptions": {
+		"rootDir": "./src",
 		"target": "es6",
 		"module": "commonjs",
 		"sourceMap": true,
@@ -12,6 +13,8 @@
 		"noUnusedLocals": true,
 		"noFallthroughCasesInSwitch": true,
 		"allowUnreachableCode": true,
-		"skipLibCheck": true
-	}
+		"skipLibCheck": true,
+		"moduleResolution": "node"
+	},
+	"include": ["src/**/*"]
 }

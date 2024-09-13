@@ -439,7 +439,15 @@
     "nodedir": "/home/pratz/.cache/node-gyp/22.7.0",
     "python": "/usr/bin/python3",
     "standalone_static_library": 1,
-    "local_prefix": "/home/pratz/Desktop/devforces/server/",
-    "user_agent": "bun/1.1.26 npm/? node/v22.6.0 linux x64"
+    "user_agent": "npm/10.8.2 node/v22.7.0 linux x64 workspaces/false",
+    "userconfig": "/home/pratz/.npmrc",
+    "local_prefix": "/home/pratz/Desktop/devforces/server",
+    "prefix": "/home/pratz/.nvm/versions/node/v22.7.0",
+    "npm_version": "10.8.2",
+    "cache": "/home/pratz/.npm",
+    "node_gyp": "/home/pratz/.nvm/versions/node/v22.7.0/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js",
+    "globalconfig": "/home/pratz/.nvm/versions/node/v22.7.0/etc/npmrc",
+    "init_module": "/home/pratz/.npm-init.js",
+    "global_prefix": "/home/pratz/.nvm/versions/node/v22.7.0"
   }
 }

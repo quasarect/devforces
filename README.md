@@ -1,27 +1,57 @@
+## Client
+
+### Install
+
+```bash
+cd client
+npm install
+```
+
+### Run
+
+```bash
+npm start
+```
+
+### Run Development
+
+```bash
+npm run dev
+```
+
+---
+
 ## Server
 
 ### Install
-``` bash
-cd server 
+
+```bash
+cd server
 npm install
 ```
+
 ### Run
-``` bash
-npm build && npm start # bun src/index.ts
+
+```bash
+npm start
 ```
+
 ### Run Development
-``` bash
-npx tsc --watch # terminal 1
-npm run dev # terminal 2
---- OR ---
-bun --watch src/index.ts 
+
+```bash
+npm run dev
 ```
+
 ### Test
-``` bash
-npm test # bun run test
+
+```bash
+npm test
 ```
+
 #### Compile and Run Node Addons
-``` bash 
-npm run build-addons # bun run build-addons
+
+```bash
+npm run build-addons
 ```
+
 ---
