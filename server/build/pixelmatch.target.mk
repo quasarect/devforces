@@ -35,16 +35,17 @@ CFLAGS_C_Debug :=
 # Flags passed to only C++ files.
 CFLAGS_CC_Debug := \
 	-fno-rtti \
+	-fno-strict-aliasing \
 	-std=gnu++17
 
 INCS_Debug := \
-	-I/home/chinmay/.cache/node-gyp/20.17.0/include/node \
-	-I/home/chinmay/.cache/node-gyp/20.17.0/src \
-	-I/home/chinmay/.cache/node-gyp/20.17.0/deps/openssl/config \
-	-I/home/chinmay/.cache/node-gyp/20.17.0/deps/openssl/openssl/include \
-	-I/home/chinmay/.cache/node-gyp/20.17.0/deps/uv/include \
-	-I/home/chinmay/.cache/node-gyp/20.17.0/deps/zlib \
-	-I/home/chinmay/.cache/node-gyp/20.17.0/deps/v8/include \
+	-I/home/pratz/.cache/node-gyp/22.7.0/include/node \
+	-I/home/pratz/.cache/node-gyp/22.7.0/src \
+	-I/home/pratz/.cache/node-gyp/22.7.0/deps/openssl/config \
+	-I/home/pratz/.cache/node-gyp/22.7.0/deps/openssl/openssl/include \
+	-I/home/pratz/.cache/node-gyp/22.7.0/deps/uv/include \
+	-I/home/pratz/.cache/node-gyp/22.7.0/deps/zlib \
+	-I/home/pratz/.cache/node-gyp/22.7.0/deps/v8/include \
 	-I$(srcdir)/node_modules/node-addon-api \
 	-I$(srcdir)/../node_modules/node-addon-api \
 	-I/usr/include/node \
@@ -81,16 +82,17 @@ CFLAGS_C_Release :=
 # Flags passed to only C++ files.
 CFLAGS_CC_Release := \
 	-fno-rtti \
+	-fno-strict-aliasing \
 	-std=gnu++17
 
 INCS_Release := \
-	-I/home/chinmay/.cache/node-gyp/20.17.0/include/node \
-	-I/home/chinmay/.cache/node-gyp/20.17.0/src \
-	-I/home/chinmay/.cache/node-gyp/20.17.0/deps/openssl/config \
-	-I/home/chinmay/.cache/node-gyp/20.17.0/deps/openssl/openssl/include \
-	-I/home/chinmay/.cache/node-gyp/20.17.0/deps/uv/include \
-	-I/home/chinmay/.cache/node-gyp/20.17.0/deps/zlib \
-	-I/home/chinmay/.cache/node-gyp/20.17.0/deps/v8/include \
+	-I/home/pratz/.cache/node-gyp/22.7.0/include/node \
+	-I/home/pratz/.cache/node-gyp/22.7.0/src \
+	-I/home/pratz/.cache/node-gyp/22.7.0/deps/openssl/config \
+	-I/home/pratz/.cache/node-gyp/22.7.0/deps/openssl/openssl/include \
+	-I/home/pratz/.cache/node-gyp/22.7.0/deps/uv/include \
+	-I/home/pratz/.cache/node-gyp/22.7.0/deps/zlib \
+	-I/home/pratz/.cache/node-gyp/22.7.0/deps/v8/include \
 	-I$(srcdir)/node_modules/node-addon-api \
 	-I$(srcdir)/../node_modules/node-addon-api \
 	-I/usr/include/node \
