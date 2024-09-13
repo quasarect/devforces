@@ -10,6 +10,7 @@ const environmentSchema = z.object({
 	STACK_NAME: z.string(),
 	PROJECT_NAME: z.string(),
 	ORGANIZATION_NAME: z.string(),
+	JWT_SECRET: z.string(),
 });
 
 export default environmentSchema.parse(process.env);
