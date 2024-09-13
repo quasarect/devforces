@@ -1,13 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 
 import HttpStatusCode from "../utils/HttpStatusCode";
-import { HttpException } from "../exceptions/HttpException";
-
-interface CustomError extends Error {
-	status?: number;
-	statusCode?: number;
-	data?: any;
-}
+import { HttpException } from "../types/exceptions/HttpException";
 
 export const handleNotFound = (
 	req: Request,
@@ -18,13 +12,12 @@ export const handleNotFound = (
 };
 
 export const handleGlobalError = (
-	error: CustomError,
+	error: HttpException,
 	req: Request,
 	res: Response,
 	next: NextFunction,
 ): void => {
-	const status: number =
-		error.statusCode ?? HttpStatusCode.INTERNAL_SERVER_ERROR;
+	const status: number = error.status ?? HttpStatusCode.INTERNAL_SERVER_ERROR;
 	const message: string = error.message;
 	const data: any = error.data;
 	res.status(status).json({ message, data });

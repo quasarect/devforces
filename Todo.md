@@ -1,5 +1,4 @@
-- Models
-  - User
-  - CoC
+- Playwright Service with Semaphores, init from index.ts and write tests
+- Remove IModels and convert to Zod validations.
+- Setup mongodb atlas from quasarect's account
 - OAuth and User flow
-- Browser Service and Init
