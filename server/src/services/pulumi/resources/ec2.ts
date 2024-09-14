@@ -1,5 +1,5 @@
 import * as aws from "@pulumi/aws";
-import { IResourceTags } from "../../types/ILogResource";
+import { IResourceTags } from "../../../types/ILogResource";
 import { Instance } from "@pulumi/aws/ec2";
 
 export async function ec2Instance(

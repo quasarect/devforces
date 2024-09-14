@@ -8,7 +8,7 @@ export const handleNotFound = (
 	res: Response,
 	next: NextFunction,
 ): void => {
-	next(new HttpException(HttpStatusCode.NOT_FOUND, "Not Found"));
+	return next(new HttpException(HttpStatusCode.NOT_FOUND, "Not Found"));
 };
 
 export const handleGlobalError = (
@@ -16,9 +16,9 @@ export const handleGlobalError = (
 	req: Request,
 	res: Response,
 	next: NextFunction,
-): void => {
+) => {
 	const status: number = error.status ?? HttpStatusCode.INTERNAL_SERVER_ERROR;
 	const message: string = error.message;
 	const data: any = error.data;
-	res.status(status).json({ message, data });
+	return res.status(status).json({ message, data });
 };

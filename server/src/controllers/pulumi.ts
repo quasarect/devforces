@@ -1,6 +1,6 @@
 import { RequestHandler } from "express";
-import { sshInstance } from "../pulumi/templates/ssh";
-import resourceTags from "../config/pulumi";
+import { sshInstance } from "../services/pulumi/templates/ssh";
+import env from "../config/env";
 import { getStack } from "../utils/pulumi";
 
 export const demoHandler: RequestHandler = async (req, res, next) => {
@@ -8,7 +8,9 @@ export const demoHandler: RequestHandler = async (req, res, next) => {
 		const stack = await getStack(
 			async () =>
 				await sshInstance({
-					...resourceTags,
+					stackName: env.STACK_NAME,
+					projectName: env.PROJECT_NAME,
+					organizationName: env.ORGANIZATION_NAME,
 					userId: "",
 					problemId: "",
 				}),

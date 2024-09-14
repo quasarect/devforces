@@ -1,10 +1,20 @@
+import http from "http";
+import { Server } from "socket.io";
+
 import app from "./app";
+import { ioConfig } from "./sockets/io";
+
 import env from "./config/env";
 import "./config/db";
 
-app.listen(env.PORT, () => {
+const server = http.createServer(app);
+const io = new Server(server);
+
+server.listen(env.PORT, () => {
 	console.log(`Server running at http://localhost:${env.PORT}`);
 });
+
+ioConfig(io);
 
 process.on("uncaughtException", (error: Error) => {
 	console.log("Uncaught Exception: ", error);
