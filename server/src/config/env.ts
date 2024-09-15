@@ -15,6 +15,14 @@ const environmentSchema = z.object({
 	PROJECT_NAME: z.string(),
 	ORGANIZATION_NAME: z.string(),
 	JWT_SECRET: z.string(),
+	MAX_BROWSER_CONTEXTS: z.number({ coerce: true }).default(1),
+	MAX_PAGES_PER_CONTEXT: z.number({ coerce: true }).default(5),
+	BROWSER_HEADLESS: z.preprocess((val) => {
+		if (typeof val === "string") {
+			return val.toLowerCase() === "true";
+		}
+		return Boolean(val);
+	}, z.boolean().default(true)),
 });
 
 export default environmentSchema.parse(process.env);

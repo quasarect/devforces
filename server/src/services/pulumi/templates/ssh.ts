@@ -1,4 +1,4 @@
-import { IResourceTags } from "../../../types/ILogResource";
+import { IResourceTags } from "../../../types";
 import { ec2Instance } from "../resources/ec2";
 import * as aws from "@pulumi/aws";
 

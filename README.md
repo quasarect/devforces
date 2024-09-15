@@ -28,6 +28,7 @@ npm run dev
 ```bash
 cd server
 npm install
+npx playwright install
 ```
 
 ### Run

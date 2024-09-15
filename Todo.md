@@ -1,4 +1,3 @@
-- Playwright Service with Semaphores, init from index.ts and write tests
-- Remove IModels and convert to Zod validations.
+- Remove IModels and convert to Zod validations and export it's Interface and Valitdation schema to the models.
 - Setup mongodb atlas from quasarect's account
 - OAuth and User flow
