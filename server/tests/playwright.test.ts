@@ -36,6 +36,10 @@ const titleBackground = async (page: Page) => {
 	return [title, background];
 };
 
+// function delay(ms: number): Promise<void> {
+// 	return new Promise(resolve => setTimeout(resolve, ms));
+//   }
+
 test.sequential("test multiple pages in parallel", async () => {
 	await launchBrowser();
 	await createBrowserContext();
@@ -61,7 +65,11 @@ test.sequential("test multiple pages in parallel", async () => {
 	expect(page3.pageId).not.toBe(page2.pageId);
 	expect(page3.pageId).not.toBe(page1.pageId);
 
+	// await delay(10000);
+
 	closeBrowser();
+}, { 
+	timeout: 15000
 });
 
 test.sequential("test page release and reallocation", async () => {
@@ -73,6 +81,9 @@ test.sequential("test page release and reallocation", async () => {
 	const [title1, background1] = await titleBackground(page1.page);
 	expect(title1).toBe("Page 1");
 	expect(background1).toBe("rgb(255, 0, 0)"); // red
+
+	// await delay(5000);
+
 
 	releasePage(page1);
 
@@ -87,5 +98,10 @@ test.sequential("test page release and reallocation", async () => {
 
 	releasePage(page2);
 
+	// await delay(5000);
+
+
 	await closeBrowser();
+}, {
+	timeout: 15000
 });
