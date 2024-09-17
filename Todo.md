@@ -2,4 +2,5 @@
 
 - if (user exists) -> login with cookie
   user create? -> login with cookie
-- add relevant middlewares
+- logout functionality
+- add relevant middlewares (if no cookies -> unauthorised, if cookie but expired -> logout + unauth)
