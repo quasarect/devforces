@@ -1,3 +1,5 @@
-- Remove IModels and convert to Zod validations and export it's Interface and Valitdation schema to the models.
-- Setup mongodb atlas from quasarect's account
-- OAuth and User flow
+@2504pratik
+
+- if (user exists) -> login with cookie
+  user create? -> login with cookie
+- add relevant middlewares

@@ -1,8 +1,8 @@
 import Router, { Response } from "express";
 
 import pulumiRouter from "./pulumi";
-import userRouter from "./user.router";
-import authRouter from "./auth.router";
+import userRouter from "./user.routes";
+import authRouter from "./auth.routes";
 
 const router = Router();
 
