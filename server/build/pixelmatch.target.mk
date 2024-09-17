@@ -7,45 +7,58 @@ DEFS_Debug := \
 	'-DUSING_UV_SHARED=1' \
 	'-DUSING_V8_SHARED=1' \
 	'-DV8_DEPRECATION_WARNINGS=1' \
+	'-DV8_DEPRECATION_WARNINGS' \
+	'-DV8_IMMINENT_DEPRECATION_WARNINGS' \
 	'-D_GLIBCXX_USE_CXX11_ABI=1' \
+	'-D_DARWIN_USE_64_BIT_INODE=1' \
 	'-D_LARGEFILE_SOURCE' \
 	'-D_FILE_OFFSET_BITS=64' \
-	'-D__STDC_FORMAT_MACROS' \
 	'-DOPENSSL_NO_PINSHARED' \
 	'-DOPENSSL_THREADS' \
 	'-DNAPI_DISABLE_CPP_EXCEPTIONS' \
 	'-DBUILDING_NODE_EXTENSION' \
 	'-DDEBUG' \
-	'-D_DEBUG'
+	'-D_DEBUG' \
+	'-DV8_ENABLE_CHECKS'
 
 # Flags passed to all source files.
 CFLAGS_Debug := \
-	-fPIC \
-	-pthread \
+	-O0 \
+	-gdwarf-2 \
+	-mmacosx-version-min=10.15 \
+	-arch \
+	arm64 \
 	-Wall \
-	-Wextra \
-	-Wno-unused-parameter \
-	-m64 \
-	-g \
-	-O0
+	-Wendif-labels \
+	-W \
+	-Wno-unused-parameter
 
 # Flags passed to only C files.
-CFLAGS_C_Debug :=
+CFLAGS_C_Debug := \
+	-fno-strict-aliasing
 
 # Flags passed to only C++ files.
 CFLAGS_CC_Debug := \
+	-std=gnu++17 \
+	-stdlib=libc++ \
 	-fno-rtti \
-	-fno-strict-aliasing \
-	-std=gnu++17
+	-fno-exceptions \
+	-fno-strict-aliasing
+
+# Flags passed to only ObjC files.
+CFLAGS_OBJC_Debug :=
+
+# Flags passed to only ObjC++ files.
+CFLAGS_OBJCC_Debug :=
 
 INCS_Debug := \
-	-I/home/pratz/.cache/node-gyp/22.7.0/include/node \
-	-I/home/pratz/.cache/node-gyp/22.7.0/src \
-	-I/home/pratz/.cache/node-gyp/22.7.0/deps/openssl/config \
-	-I/home/pratz/.cache/node-gyp/22.7.0/deps/openssl/openssl/include \
-	-I/home/pratz/.cache/node-gyp/22.7.0/deps/uv/include \
-	-I/home/pratz/.cache/node-gyp/22.7.0/deps/zlib \
-	-I/home/pratz/.cache/node-gyp/22.7.0/deps/v8/include \
+	-I/Users/pratik/Library/Caches/node-gyp/18.17.0/include/node \
+	-I/Users/pratik/Library/Caches/node-gyp/18.17.0/src \
+	-I/Users/pratik/Library/Caches/node-gyp/18.17.0/deps/openssl/config \
+	-I/Users/pratik/Library/Caches/node-gyp/18.17.0/deps/openssl/openssl/include \
+	-I/Users/pratik/Library/Caches/node-gyp/18.17.0/deps/uv/include \
+	-I/Users/pratik/Library/Caches/node-gyp/18.17.0/deps/zlib \
+	-I/Users/pratik/Library/Caches/node-gyp/18.17.0/deps/v8/include \
 	-I$(srcdir)/node_modules/node-addon-api \
 	-I$(srcdir)/../node_modules/node-addon-api \
 	-I/usr/include/node \
@@ -56,10 +69,12 @@ DEFS_Release := \
 	'-DUSING_UV_SHARED=1' \
 	'-DUSING_V8_SHARED=1' \
 	'-DV8_DEPRECATION_WARNINGS=1' \
+	'-DV8_DEPRECATION_WARNINGS' \
+	'-DV8_IMMINENT_DEPRECATION_WARNINGS' \
 	'-D_GLIBCXX_USE_CXX11_ABI=1' \
+	'-D_DARWIN_USE_64_BIT_INODE=1' \
 	'-D_LARGEFILE_SOURCE' \
 	'-D_FILE_OFFSET_BITS=64' \
-	'-D__STDC_FORMAT_MACROS' \
 	'-DOPENSSL_NO_PINSHARED' \
 	'-DOPENSSL_THREADS' \
 	'-DNAPI_DISABLE_CPP_EXCEPTIONS' \
@@ -67,32 +82,42 @@ DEFS_Release := \
 
 # Flags passed to all source files.
 CFLAGS_Release := \
-	-fPIC \
-	-pthread \
-	-Wall \
-	-Wextra \
-	-Wno-unused-parameter \
-	-m64 \
 	-O3 \
-	-fno-omit-frame-pointer
+	-gdwarf-2 \
+	-mmacosx-version-min=10.15 \
+	-arch \
+	arm64 \
+	-Wall \
+	-Wendif-labels \
+	-W \
+	-Wno-unused-parameter
 
 # Flags passed to only C files.
-CFLAGS_C_Release :=
+CFLAGS_C_Release := \
+	-fno-strict-aliasing
 
 # Flags passed to only C++ files.
 CFLAGS_CC_Release := \
+	-std=gnu++17 \
+	-stdlib=libc++ \
 	-fno-rtti \
-	-fno-strict-aliasing \
-	-std=gnu++17
+	-fno-exceptions \
+	-fno-strict-aliasing
+
+# Flags passed to only ObjC files.
+CFLAGS_OBJC_Release :=
+
+# Flags passed to only ObjC++ files.
+CFLAGS_OBJCC_Release :=
 
 INCS_Release := \
-	-I/home/pratz/.cache/node-gyp/22.7.0/include/node \
-	-I/home/pratz/.cache/node-gyp/22.7.0/src \
-	-I/home/pratz/.cache/node-gyp/22.7.0/deps/openssl/config \
-	-I/home/pratz/.cache/node-gyp/22.7.0/deps/openssl/openssl/include \
-	-I/home/pratz/.cache/node-gyp/22.7.0/deps/uv/include \
-	-I/home/pratz/.cache/node-gyp/22.7.0/deps/zlib \
-	-I/home/pratz/.cache/node-gyp/22.7.0/deps/v8/include \
+	-I/Users/pratik/Library/Caches/node-gyp/18.17.0/include/node \
+	-I/Users/pratik/Library/Caches/node-gyp/18.17.0/src \
+	-I/Users/pratik/Library/Caches/node-gyp/18.17.0/deps/openssl/config \
+	-I/Users/pratik/Library/Caches/node-gyp/18.17.0/deps/openssl/openssl/include \
+	-I/Users/pratik/Library/Caches/node-gyp/18.17.0/deps/uv/include \
+	-I/Users/pratik/Library/Caches/node-gyp/18.17.0/deps/zlib \
+	-I/Users/pratik/Library/Caches/node-gyp/18.17.0/deps/v8/include \
 	-I$(srcdir)/node_modules/node-addon-api \
 	-I$(srcdir)/../node_modules/node-addon-api \
 	-I/usr/include/node \
@@ -105,13 +130,15 @@ OBJS := \
 all_deps += $(OBJS)
 
 # Make sure our dependencies are built before any of us.
-$(OBJS): | $(builddir)/nothing.a $(obj).target/node_modules/node-addon-api/nothing.a
+$(OBJS): | $(builddir)/nothing.a
 
 # CFLAGS et al overrides must be target-local.
 # See "Target-specific Variable Values" in the GNU Make manual.
 $(OBJS): TOOLSET := $(TOOLSET)
 $(OBJS): GYP_CFLAGS := $(DEFS_$(BUILDTYPE)) $(INCS_$(BUILDTYPE))  $(CFLAGS_$(BUILDTYPE)) $(CFLAGS_C_$(BUILDTYPE))
 $(OBJS): GYP_CXXFLAGS := $(DEFS_$(BUILDTYPE)) $(INCS_$(BUILDTYPE))  $(CFLAGS_$(BUILDTYPE)) $(CFLAGS_CC_$(BUILDTYPE))
+$(OBJS): GYP_OBJCFLAGS := $(DEFS_$(BUILDTYPE)) $(INCS_$(BUILDTYPE))  $(CFLAGS_$(BUILDTYPE)) $(CFLAGS_C_$(BUILDTYPE)) $(CFLAGS_OBJC_$(BUILDTYPE))
+$(OBJS): GYP_OBJCXXFLAGS := $(DEFS_$(BUILDTYPE)) $(INCS_$(BUILDTYPE))  $(CFLAGS_$(BUILDTYPE)) $(CFLAGS_CC_$(BUILDTYPE)) $(CFLAGS_OBJCC_$(BUILDTYPE))
 
 # Suffix rules, putting all outputs into $(obj).
 
@@ -129,37 +156,48 @@ $(obj).$(TOOLSET)/$(TARGET)/%.o: $(obj)/%.cpp FORCE_DO_CMD
 # End of this set of suffix rules
 ### Rules for final target.
 LDFLAGS_Debug := \
-	-pthread \
-	-rdynamic \
-	-m64
+	-undefined dynamic_lookup \
+	-Wl,-search_paths_first \
+	-mmacosx-version-min=10.15 \
+	-arch \
+	arm64 \
+	-L$(builddir) \
+	-stdlib=libc++
+
+LIBTOOLFLAGS_Debug := \
+	-undefined dynamic_lookup \
+	-Wl,-search_paths_first
 
 LDFLAGS_Release := \
-	-pthread \
-	-rdynamic \
-	-m64
+	-undefined dynamic_lookup \
+	-Wl,-search_paths_first \
+	-mmacosx-version-min=10.15 \
+	-arch \
+	arm64 \
+	-L$(builddir) \
+	-stdlib=libc++
+
+LIBTOOLFLAGS_Release := \
+	-undefined dynamic_lookup \
+	-Wl,-search_paths_first
 
 LIBS :=
 
-$(obj).target/pixelmatch.node: GYP_LDFLAGS := $(LDFLAGS_$(BUILDTYPE))
-$(obj).target/pixelmatch.node: LIBS := $(LIBS)
-$(obj).target/pixelmatch.node: TOOLSET := $(TOOLSET)
-$(obj).target/pixelmatch.node: $(OBJS) $(obj).target/node_modules/node-addon-api/nothing.a FORCE_DO_CMD
+$(builddir)/pixelmatch.node: GYP_LDFLAGS := $(LDFLAGS_$(BUILDTYPE))
+$(builddir)/pixelmatch.node: LIBS := $(LIBS)
+$(builddir)/pixelmatch.node: GYP_LIBTOOLFLAGS := $(LIBTOOLFLAGS_$(BUILDTYPE))
+$(builddir)/pixelmatch.node: TOOLSET := $(TOOLSET)
+$(builddir)/pixelmatch.node: $(OBJS) $(builddir)/nothing.a FORCE_DO_CMD
 	$(call do_cmd,solink_module)
 
-all_deps += $(obj).target/pixelmatch.node
+all_deps += $(builddir)/pixelmatch.node
 # Add target alias
 .PHONY: pixelmatch
 pixelmatch: $(builddir)/pixelmatch.node
 
-# Copy this to the executable output path.
-$(builddir)/pixelmatch.node: TOOLSET := $(TOOLSET)
-$(builddir)/pixelmatch.node: $(obj).target/pixelmatch.node FORCE_DO_CMD
-	$(call do_cmd,copy)
-
-all_deps += $(builddir)/pixelmatch.node
 # Short alias for building this executable.
 .PHONY: pixelmatch.node
-pixelmatch.node: $(obj).target/pixelmatch.node $(builddir)/pixelmatch.node
+pixelmatch.node: $(builddir)/pixelmatch.node
 
 # Add executable to "all" target.
 .PHONY: all

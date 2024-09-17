@@ -16,8 +16,8 @@ const cssBattleSchema = z.object({
 	image: z.string(),
 	competition: z.instanceof(mongoose.Types.ObjectId),
 	tags: z.array(z.enum([Tags.Easy, Tags.Medium, Tags.Hard])),
-	createdAt: z.date(),
-	updatedAt: z.date(),
+	createdAt: z.date().optional(),
+	updatedAt: z.date().optional(),
 });
 
 type ICSSBattle = z.infer<typeof cssBattleSchema>;

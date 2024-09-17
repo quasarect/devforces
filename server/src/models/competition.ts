@@ -8,8 +8,8 @@ const competitionSchema = z.object({
 	endDate: z.date(),
 	logo: z.string(),
 	creator: z.instanceof(mongoose.Types.ObjectId),
-	createdAt: z.date(),
-	updatedAt: z.date(),
+	createdAt: z.date().optional(),
+	updatedAt: z.date().optional(),
 });
 
 type ICompetition = z.infer<typeof competitionSchema>;

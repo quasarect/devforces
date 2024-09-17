@@ -6,8 +6,8 @@ const cssBattleSubmissionSchema = z.object({
 	cssBattle: z.instanceof(mongoose.Types.ObjectId),
 	score: z.number().min(0).max(100),
 	code: z.string().min(1),
-	createdAt: z.date(),
-	updatedAt: z.date(),
+	createdAt: z.date().optional(),
+	updatedAt: z.date().optional(),
 });
 
 type ICSSBattleSubmission = z.infer<typeof cssBattleSubmissionSchema>;

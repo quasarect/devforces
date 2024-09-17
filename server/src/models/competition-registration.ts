@@ -15,8 +15,8 @@ const competitionRegistrationSchema = z.object({
 		CompetitionRegistrationStatus.confirmed,
 		CompetitionRegistrationStatus.cancelled,
 	]),
-	createdAt: z.date(),
-	updatedAt: z.date(),
+	createdAt: z.date().optional(),
+	updatedAt: z.date().optional(),
 });
 
 type ICompetitionRegistration = z.infer<typeof competitionRegistrationSchema>;

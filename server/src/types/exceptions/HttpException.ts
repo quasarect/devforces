@@ -1,4 +1,4 @@
-declare global {
+
 	class HttpException extends Error {
 		status: number;
 		message: string;
@@ -13,6 +13,4 @@ declare global {
 			Error.captureStackTrace(this, this.constructor);
 		}
 	}
-}
-
-export {};
+export default HttpException

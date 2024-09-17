@@ -23,6 +23,9 @@ const environmentSchema = z.object({
 		}
 		return Boolean(val);
 	}, z.boolean().default(true)),
+	GOOGLE_CLIENT_ID: z.string(),
+	GOOGLE_CLIENT_SECRET: z.string(),
+	GOOGLE_REDIRECT_URI: z.string()
 });
 
 export default environmentSchema.parse(process.env);

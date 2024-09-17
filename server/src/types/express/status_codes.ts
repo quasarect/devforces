@@ -1,4 +1,4 @@
-declare global {
+
 	enum HttpStatusCode {
 		// 2xx Success
 		OK = 200,
@@ -16,6 +16,7 @@ declare global {
 		FORBIDDEN = 403,
 		NOT_FOUND = 404,
 		METHOD_NOT_ALLOWED = 405,
+		CONFLICT = 409,
 
 		// 5xx Server Errors
 		INTERNAL_SERVER_ERROR = 500,
@@ -23,6 +24,4 @@ declare global {
 		BAD_GATEWAY = 502,
 		SERVICE_UNAVAILABLE = 503,
 	}
-}
-
-export {};
+export default HttpStatusCode

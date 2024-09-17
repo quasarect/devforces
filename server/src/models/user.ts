@@ -6,8 +6,8 @@ const userSchema = z.object({
 	email: z.string().email(),
 	username: z.string().min(3).max(30),
 	pfp: z.string().optional(),
-	createdAt: z.date(),
-	updatedAt: z.date(),
+	createdAt: z.date().optional(),
+	updatedAt: z.date().optional(),
 });
 
 type IUser = z.infer<typeof userSchema>;
