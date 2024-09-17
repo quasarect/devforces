@@ -1,8 +1,5 @@
 import { Request, Response, NextFunction } from "express";
 
-import HttpStatusCode from "../utils/HttpStatusCode";
-import { HttpException } from "../types/exceptions/HttpException";
-
 export const handleNotFound = (
 	req: Request,
 	res: Response,
