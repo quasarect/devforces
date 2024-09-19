@@ -1,5 +1,5 @@
 import React from 'react'
-import { Github, Facebook, Youtube, Twitter, Instagram, Copyright } from 'lucide-react';
+import { Github, Facebook, Youtube, Twitter, Instagram} from 'lucide-react';
 
 const Footer = () => {
     return (
