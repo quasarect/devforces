@@ -7,8 +7,7 @@ import env from "../../config/env";
 let MAX_BROWSER_CONTEXTS = env.MAX_BROWSER_CONTEXTS;
 let MAX_PAGES_PER_CONTEXT = env.MAX_PAGES_PER_CONTEXT;
 
-const HEADLESS = env.NODE_ENV === "development" ? env.BROWSER_HEADLESS : true;
-
+const HEADLESS = env.NODE_ENV !== "production" ? env.BROWSER_HEADLESS : true;
 let browser: Browser;
 
 let browserContexts: BrowserContextOptions[] = [];

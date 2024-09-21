@@ -1,15 +1,18 @@
-import mongoose, { Schema, Document } from "mongoose";
+import mongoose, { Schema } from "mongoose";
+import { z } from "zod";
 
-interface ICSSBattleSubmission extends Document {
-	user: Schema.Types.ObjectId;
-	cssBattle: Schema.Types.ObjectId;
-	score: number;
-	code: string;
-	createdAt: Date;
-	updatedAt: Date;
-}
+const cssBattleSubmissionSchema = z.object({
+	user: z.instanceof(mongoose.Types.ObjectId),
+	cssBattle: z.instanceof(mongoose.Types.ObjectId),
+	score: z.number().min(0).max(100),
+	code: z.string().min(1),
+	createdAt: z.date().optional(),
+	updatedAt: z.date().optional(),
+});
 
-const cssBattleSubmission = new Schema<ICSSBattleSubmission>(
+type ICSSBattleSubmission = z.infer<typeof cssBattleSubmissionSchema>;
+
+const mongooseCSSBattleSubmissionSchema = new Schema<ICSSBattleSubmission>(
 	{
 		user: {
 			type: Schema.Types.ObjectId,
@@ -24,6 +27,8 @@ const cssBattleSubmission = new Schema<ICSSBattleSubmission>(
 		score: {
 			type: Number,
 			required: true,
+			min: 0,
+			max: 100,
 		},
 		code: {
 			type: String,
@@ -35,7 +40,14 @@ const cssBattleSubmission = new Schema<ICSSBattleSubmission>(
 	},
 );
 
+mongooseCSSBattleSubmissionSchema.index(
+	{ user: 1, cssBattle: 1 },
+	{ unique: true },
+);
+
 export const CSSBattleSubmission = mongoose.model<ICSSBattleSubmission>(
 	"CSSBattleSubmission",
-	cssBattleSubmission,
+	mongooseCSSBattleSubmissionSchema,
 );
+
+export { cssBattleSubmissionSchema };
