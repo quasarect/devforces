@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Navbar from '../components/Navbar';
-import Testimonial from '../components/Testimonial';
-import FAQ_PART from "../components/FAQ_Part"
-import Footer from '../components/Footer';
+import Navbar from '../../components/Navbar';
+import Testimonial from './Testimonial';
+import FAQ_PART from "./FAQ_Part"
+import Footer from './Footer';
 
 const LandingPage: React.FC = () => {
   const navigate = useNavigate();
