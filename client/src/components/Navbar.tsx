@@ -1,6 +1,6 @@
 import React from 'react';
 import { Moon, Sun} from 'lucide-react';
-import Google from "../../public/google.png";
+import Google from "/google.png";
 import { Link } from 'react-router-dom';
 type NavbarProps = {
   isDarkMode: boolean;
@@ -13,7 +13,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleDarkMode }) => {
       <nav className="container mx-auto px-4 py-6 flex justify-between items-center">
       <div className="flex items-center">
   <Link to="/">
-    <img src="../../public/df_logo_256.png" alt='DevForces Logo - A community for developers' className="h-10  mr-2" />
+    <img src="df_logo_256.png" alt='DevForces Logo - A community for developers' className="h-10  mr-2" />
   </Link>
 </div>
         <div className="flex items-center space-x-4">
