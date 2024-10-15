@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Testimonial from '../components/Testimonial';
 import FAQ_PART from "../components/FAQ_Part"
+import Pricing from '@/components/Pricing';
 import Footer from '../components/Footer';
 
 const LandingPage: React.FC = () => {
@@ -89,7 +90,15 @@ const LandingPage: React.FC = () => {
       <div>
           <Testimonial/>
       </div>
-      {/* Here Starts The Testimonial SECTION // CAUTION :IT CAN BE SHIFTED PLEASE MOVE THE COMMENTS ALONG WITH THE CODE */}
+      {/* Here ENDs The Testimonial SECTION // CAUTION :IT CAN BE SHIFTED PLEASE MOVE THE COMMENTS ALONG WITH THE CODE */}
+
+
+
+      {/* Here Starts The Pricing SECTION // CAUTION :IT CAN BE SHIFTED PLEASE MOVE THE COMMENTS ALONG WITH THE CODE */}
+      <div>
+          <Pricing/>
+      </div>
+      {/* Here ENDs The Pricing SECTION // CAUTION :IT CAN BE SHIFTED PLEASE MOVE THE COMMENTS ALONG WITH THE CODE */}
 
 
       {/* Here Starts The FAQ SECTION // CAUTION :IT CAN BE SHIFTED PLEASE MOVE THE COMMENTS ALONG WITH THE CODE */}
