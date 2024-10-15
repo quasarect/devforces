@@ -2,7 +2,6 @@ import { createBrowserRouter } from 'react-router-dom';
 
 import App from './App.tsx';
 import CSSBattles from './pages/CSSBattles.tsx';
-
 const router = createBrowserRouter([
   {
     path: '/',
