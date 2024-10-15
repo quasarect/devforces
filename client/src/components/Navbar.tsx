@@ -29,7 +29,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleDarkMode }) => {
           </a> */}
           <button className="flex items-center px-4 py-2  rounded-lg shadow-md transition-all duration-300">
             <img src={Google} alt='Google Logo' className="h-6 mr-2" />
-            <span className="text-base font-medium pr-2 text-gray-100">Sign in</span>
+            <span className="text-base font-medium pr-2 text-white">Sign in</span>
             <MoveRight size={25} color="#ffffff" />
           </button>
         </div>
