@@ -1,6 +1,6 @@
 import React from 'react';
-import { Moon, Sun} from 'lucide-react';
-import Google from "/google.png";
+import { Moon, Sun, MoveRight} from 'lucide-react';
+import Google from "../assets/google.png";
 import { Link } from 'react-router-dom';
 type NavbarProps = {
   isDarkMode: boolean;
@@ -27,9 +27,10 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleDarkMode }) => {
           {/* <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-black transition-colors duration-300">
             <Github size={24} />
           </a> */}
-          <button className="flex items-center px-4 py-2 bg-white border border-gray-300 rounded-lg shadow-md hover:bg-gray-100 transition-all duration-300">
+          <button className="flex items-center px-4 py-2  rounded-lg shadow-md transition-all duration-300">
             <img src={Google} alt='Google Logo' className="h-6 mr-2" />
-            <span className="text-base font-medium text-gray-700">Sign in</span>
+            <span className="text-base font-medium pr-2 text-gray-100">Sign in</span>
+            <MoveRight size={25} color="#ffffff" />
           </button>
         </div>
       </nav>
