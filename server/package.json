@@ -5,6 +5,7 @@
 	"main": "dist/src/index.js",
 	"scripts": {
 		"test": "vitest --config vitest.config.ts",
+		"test-user": "jest tests/user.test.ts",
 		"dev": "npx tsx --watch src/index.ts",
 		"build": "tsc",
 		"start": "tsc && node dist/index.js",
@@ -22,16 +23,21 @@
 	"homepage": "https://github.com/quasarect/devforces#readme",
 	"devDependencies": {
 		"@pulumi/pulumi": "^3.131.0",
+		"@types/cookie-parser": "^1.4.7",
 		"@types/cors": "^2.8.17",
 		"@types/express": "^4.17.21",
+		"@types/jest": "^29.5.13",
 		"@types/jsonwebtoken": "~9.0.6",
 		"@types/morgan": "^1.9.9",
 		"@types/multer": "~1.4.12",
+		"jest": "^29.7.0",
+		"ts-jest": "^29.2.5",
 		"vitest": "^2.0.5"
 	},
 	"dependencies": {
 		"@pulumi/aws": "^6.51.0",
 		"axios": "^1.7.7",
+		"cookie-parser": "^1.4.6",
 		"cors": "^2.8.5",
 		"dotenv": "^16.4.5",
 		"express": "^4.20.0",

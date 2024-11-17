@@ -1,6 +1,6 @@
 {
 	"compilerOptions": {
-		"rootDir": "./src",
+		"rootDir": ".",
 		"target": "es6",
 		"module": "commonjs",
 		"sourceMap": true,
@@ -14,7 +14,15 @@
 		"noFallthroughCasesInSwitch": true,
 		"allowUnreachableCode": true,
 		"skipLibCheck": true,
-		"moduleResolution": "node"
+		"moduleResolution": "node",
+		"types": ["jest", "node"]
 	},
-	"include": ["src/**/*"]
+	"include": [
+		"src/**/*.ts",
+		"tests/**/*.ts"
+	  ],
+	  "exclude": [
+		"node_modules",
+		"dist"
+	  ]
 }
