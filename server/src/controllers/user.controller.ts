@@ -1,5 +1,5 @@
 import { RequestHandler } from 'express';
-import { verifyToken } from '../utils/token';
+import { verifyToken, createAuthToken } from '../utils/token';
 import { saveUser, checkUsernameAvailibility } from '../services/user';
 
 import HttpException from '../types/exceptions/HttpException';
@@ -30,8 +30,16 @@ export const createUser : RequestHandler = async (req, res, next): Promise<void>
       username: username
     };
 
-    // Save the user to the database
-    await saveUser(userData);
+    // Save the new user
+    const newUser = await saveUser(userData);
+
+    // Create JWT token and set in cookie
+    const authToken = createAuthToken(newUser);
+    res.cookie('auth_token', authToken, {
+      httpOnly: true,
+      secure: true,
+      maxAge: 3600000, // 1 hour
+    });
 
     // Send success response
     res.status(HttpStatusCode.CREATED).json({ message: 'User created successfully' });
