@@ -6,9 +6,9 @@ import {
 	closeBrowser,
 	getPage,
 	releasePage,
-} from "../src/services/playwright";
-import { AcquiredPage } from "../src/types";
-import { applyCSSToPage } from "../src/services/playwright/actions";
+} from "../api/services/playwright";
+import { AcquiredPage } from "../api/types";
+import { applyCSSToPage } from "../api/services/playwright/actions";
 
 async function getPageAndApplyCSS(
 	code: string,

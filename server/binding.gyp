@@ -2,7 +2,7 @@
 	"targets": [
 		{
 			"target_name": "pixelmatch",
-			"sources": ["src/services/pixelmatch/pixelmatch_module.cpp"],
+			"sources": ["api/services/pixelmatch/pixelmatch_module.cpp"],
 			"include_dirs": [
 				"<!(node -p \"require('node-addon-api').include_dir\")",
 				"../node_modules/node-addon-api",

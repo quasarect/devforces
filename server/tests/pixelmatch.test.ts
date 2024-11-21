@@ -1,6 +1,6 @@
 import { expect, test } from "vitest";
 
-import { getPercentageMatch } from "../src/services/pixelmatch";
+import { getPercentageMatch } from "../api/services/pixelmatch";
 import path from "path";
 import fs from "fs";
 

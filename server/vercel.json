@@ -1,9 +1,9 @@
 {
 	"version": 2,
-	"rewrites": [{ "source": "/(.*)", "destination": "/" }],
-	"functions": {
-		"server": {
-			"includeFiles": "src/index.ts"
-		}
-	}
+	"rewrites": [{ "source": "/(.*)", "destination": "/" }]
+	// "functions": {
+	// 	"server": {
+	// 		"includeFiles": "src/index.ts"
+	// 	}
+	// }
 }
