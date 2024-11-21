@@ -2,6 +2,8 @@
 	"version": 2,
 	"rewrites": [{ "source": "/(.*)", "destination": "/" }],
 	"functions": {
-		"includeFiles": "src/index.ts"
+		"server": {
+			"includeFiles": "src/index.ts"
+		}
 	}
 }
