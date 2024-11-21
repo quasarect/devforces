@@ -1,5 +1,7 @@
 {
 	"version": 2,
 	"rewrites": [{ "source": "/(.*)", "destination": "/" }],
-	"includeFiles": "src/index.ts"
+	"functions" {
+    "includeFiles": "src/index.ts"
+  }
 }
