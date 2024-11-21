@@ -8,7 +8,7 @@
 		"test-user": "jest tests/user.test.ts",
 		"dev": "npx tsx --watch src/index.ts",
 		"build": "tsc",
-		"start": "tsc && node dist/index.js",
+		"start": "node dist/index.js",
 		"build-addons": "rm -rf build && npx node-gyp configure && npx node-gyp build"
 	},
 	"repository": {
