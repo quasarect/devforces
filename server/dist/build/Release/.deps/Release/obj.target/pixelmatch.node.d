@@ -1,0 +1,1 @@
+cmd_Release/obj.target/pixelmatch.node := g++ -o Release/obj.target/pixelmatch.node -shared -pthread -rdynamic -m64  -Wl,-soname=pixelmatch.node -Wl,--start-group Release/obj.target/pixelmatch/src/services/pixelmatch/pixelmatch_module.o Release/obj.target/node_modules/node-addon-api/nothing.a -Wl,--end-group 
