@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: #020209;
+    --foreground: 0 0% 98%;
+    --card: 0, 0%, 11%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 300, 2%, 12%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 223, 7%, 20%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: #0b0a10;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+    --font--h1: clamp(4.5rem, 0rem + 5vw, 7.5rem);
+    --font--h2: clamp(3rem, 0rem + 3.3333vw, 5rem);
+    --font--h3: clamp(2.5rem, -0.05rem + 2.8333vw, 4.2rem);
+    --font--h4: clamp(1.8rem, 0.05rem + 1.1667vw, 2.8rem);
+    --font--label: clamp(0.875rem, -0.0625rem + 1.0417vw, 1.5rem);
+  }
+  .dark {
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  @media screen and (max-width: 991px) {
+    :root {
+      --font--h1: calc(4.5rem * 900 / 1440);
+      --font--h2: calc(5.5rem * 900 / 1440);
+    }
+  }
+
+  @media screen and (max-width: 720px) {
+    :root {
+      --font--h1: calc(5rem * 720 / 1440);
+      --font--h2: calc(4.5rem * 720 / 1440);
+      --font--h3: calc(4rem * 800 / 1440);
+      --font--h4: calc(2.5rem * 1000 / 1440);
+      --font--h5: calc(1.75rem * 1000 / 1440);
+    }
+  }
+
+  @media screen and (min-width: 991px) {
+    :root {
+      --font--h1: clamp(3.1rem, 0.01rem + 4.9889vw, 4.5rem);
+      --font--h2: clamp(2.1rem, 0.1136rem + 3.2071vw, 3rem);
+      --font--h3: clamp(1.7rem, -0.0657rem + 2.8508vw, 2.5rem);
+      --font--h4: clamp(1.4rem, 0.0757rem + 2.1381vw, 2rem);
+      --font--label: clamp(0.6rem, -0.007rem + 0.98vw, 0.875rem);
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    :root {
+      --font--h1: clamp(4.5rem, 0rem + 5vw, 7.5rem);
+      --font--h2: clamp(3rem, 0rem + 3.3333vw, 5rem);
+      --font--h3: clamp(2.5rem, -0.05rem + 2.8333vw, 4.2rem);
+      --font--h4: clamp(1.8rem, 0.05rem + 1.1667vw, 2.8rem);
+      --font--label: clamp(0.875rem, -0.0625rem + 1.0417vw, 1.5rem);
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-card rounded;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0);
+  }
+}
+
+/* .grid-main {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+@media (min-width: 768px) {
+  .grid-main {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-rows: repeat(4, minmax(0, 1fr));
+  }
+} */
+
+.bg-card {
+  /* background-image: radial-gradient(125% 125% at 0% 0%, #36454f 50%, #08060e); */
+  /* background: radial-gradient(
+    70% 62% at 66.5% 78.2%,
+    #242528 8.129222972972974%,
+    #18181d 50.330799549549546%,
+    #0b0a10 100%
+  ); */
+  background: linear-gradient(30deg, #0b0a10 80%, #18181d);
+  backdrop-filter: blur(10px);
+}
+
+.gridblock {
+  background-image: url("https://framerusercontent.com/images/icNdvMhMMBFdllijaPNDAuvOUJA.png");
+  background-repeat: repeat;
+
+  mask-image: linear-gradient(180deg, transparent, black);
+  background-size: 40px;
+}
+
+.bg-mask {
+  mix-blend-mode: soft-light;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  right: -8px;
+  top: 0;
+  z-index: 1;
+  mask: radial-gradient(
+    118% 69% at 100% 100%,
+    rgb(0, 0, 0) 8.11163%,
+    rgba(0, 0, 0, 0.17) 53.3203%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  opacity: 1;
+}
+
+.bg-main {
+  position: absolute;
+  border-radius: inherit;
+  inset: 0px;
+  background-repeat: repeat;
+  background-position: center center;
+  background-size: 44.7px;
+  background-image: url(https://framerusercontent.com/images/icNdvMhMMBFdllijaPNDAuvOUJA.png);
+  border: 0px;
+}
