@@ -48,6 +48,22 @@ function page() {
             </Button>
           </Link>
         </CardSpotlight>
+        <CardSpotlight className='h-auto w-96 py-16'>
+          <p className='text-xl font-bold relative z-20 mt-2 text-white'>
+            Metrics
+          </p>
+          <div className='text-neutral-200 mt-4 relative z-20'>
+            All the metrics of CSS Battles and Cyber and Blockchain performance.
+          </div>
+          <Link href='/perf'>
+            <Button
+              variant='ghost'
+              className='text-neutral-300 mt-4 relative z-20 text-sm'
+            >
+              Take a look <ArrowRight className='inline-block ml-1' />
+            </Button>
+          </Link>
+        </CardSpotlight>
       </div>
       <div className='min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min' />
     </div>

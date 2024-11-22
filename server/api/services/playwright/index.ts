@@ -47,7 +47,11 @@ async function createPage(
 	};
 }
 
-export async function createBrowserContext() {
+export async function createBrowserContext(MAX_PAGES_PER_CONTEXT_ARG?: number) {
+	if (MAX_PAGES_PER_CONTEXT_ARG) {
+		MAX_PAGES_PER_CONTEXT = MAX_PAGES_PER_CONTEXT_ARG;
+	}
+
 	if (browserContexts.length >= MAX_BROWSER_CONTEXTS) {
 		throw new Error("Maximum number of browser contexts reached");
 	}
